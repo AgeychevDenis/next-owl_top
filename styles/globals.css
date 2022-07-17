@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,regular,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,regular,500,600,700&display=swap');
 
 html,
 body {
@@ -7,7 +7,7 @@ body {
 	color: var(--black);
 
 	font-family: "Noto Sans KR", sans-serif;
-	background-color: #E5E5E5;
+	background-color: var(--white);
 }
 
 a {
@@ -22,8 +22,10 @@ a {
 
 :root {
 	--black: #3B434E;
+	--gray-ligth: #EBEBEB;
 	--white: white;
-	--pramary: #7653FC;
+	--primary: #7653FC;
+	--primary-hover: #6343e0;
 	--red: #FC836D;
 	--green:	#1DC37E;
 	--green-ligth: #C8F8E4;
