@@ -8,7 +8,7 @@ export interface IAppContext {
    setMenu?: (newMenu: MenuItem[]) => void;
 }
 
-export const AppConext = createContext<IAppContext>({ menu: [], firstCategory: TopLevelCategory.Courses });
+export const AppContext = createContext<IAppContext>({ menu: [], firstCategory: TopLevelCategory.Courses });
 
 export const AppContextProvider = ({ menu, firstCategory, children }: PropsWithChildren<IAppContext>): JSX.Element => {
    const [menuState, setMenuState] = useState<MenuItem[]>(menu);
@@ -17,7 +17,7 @@ export const AppContextProvider = ({ menu, firstCategory, children }: PropsWithC
       setMenuState(newMenu);
    }
 
-   return <AppConext.Provider value={{menu: menuState, firstCategory, setMenu}}>
+   return <AppContext.Provider value={{menu: menuState, firstCategory, setMenu}}>
       {children}
-   </AppConext.Provider>;
+   </AppContext.Provider>;
 }
