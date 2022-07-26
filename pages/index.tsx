@@ -21,7 +21,7 @@ function Home({ menu }: HomeProps): JSX.Element {
       <Tag size="sizeM" color="green">green</Tag>
       <Tag size="sizeM" color="primary">primary</Tag>
       <Rating rating={state} isEditable setRating={setState}></Rating>
-      <Input placeholder='тест'/>
+      <Input placeholder='тест' />
       <Textarea placeholder='тест'></Textarea>
     </>
   )
@@ -42,7 +42,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   }
 }
 
-interface HomeProps extends Record<string, unknown>{
+interface HomeProps extends Record<string, unknown> {
   menu: MenuItem[];
   firstCategory: number;
 }
