@@ -288,10 +288,24 @@
          "actions"
       ;
    }
+
+   .actions button{
+      display: block;
+      width: 100%;
+   }
+
+   .actions button:last-child{
+      margin-left: 0;
+      margin-top: 10px;
+   }
 }
 
 @media (max-width: 375px) {
    .product {
+      padding: 10px;
+   }
+
+   .opened {
       padding: 10px;
    }
 }
