@@ -8,8 +8,10 @@ import { Textarea } from "../Textarea/Textarea";
 import { Button } from "../Button/Button";
 import { useForm, Controller } from 'react-hook-form';
 import { IReviewForm } from './ReviewForm.interface';
+import { ForwardedRef, forwardRef } from "react";
 
-export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps): JSX.Element => {
+// eslint-disable-next-line react/display-name
+export const ReviewForm = forwardRef(({ productId, className, ...props }: ReviewFormProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
 	const { register, control, handleSubmit } = useForm<IReviewForm>();
 
 	const onSubmit = (data: IReviewForm) => {
@@ -29,7 +31,7 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
 						control={control}
 						name='rating'
 						render={({ field }) => (
-							<Rating isEditable rating={field.value} setRating={field.onChange} />
+							<Rating isEditable rating={field.value} ref={field.ref} setRating={field.onChange} />
 						)}
 					/>
 				</div>
@@ -48,4 +50,4 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
 			</div>
 		</form>
 	);
-};
+});
