@@ -8,16 +8,25 @@ import { Button } from "../Button/Button";
 import { declOfNum, priceRu } from "../../helpers/helpers";
 import { Divider } from "../Divider/Divider";
 import Image from 'next/image'
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Review } from "../Review/Review";
 import { ReviewForm } from "../ReviewForm/ReviewForm";
 
 
 export const Product = ({ product, children, className, ...props }: ProductProps): JSX.Element => {
    const [isPeviewOpened, setIsPeviewOpened] = useState<boolean>(false);
+   const reviewRef = useRef<HTMLDivElement>(null)
+
+   const scrollToReview = () => {
+      setIsPeviewOpened(true);
+      reviewRef.current?.scrollIntoView({
+         behavior: 'smooth',
+         block: 'start'
+      });
+   };
 
    return (
-      <>
+      <div className={className} {...props}>
          <Card className={styles.product}>
             <div className={styles.logo}>
                <Image width={70} height={70} src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} />
@@ -45,7 +54,7 @@ export const Product = ({ product, children, className, ...props }: ProductProps
                кредит
             </div>
             <div className={styles.rateTitle}>
-               {product.reviewCount} {declOfNum(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}
+              <a href="#ref" onClick={scrollToReview}>{product.reviewCount} {declOfNum(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}</a> 
             </div>
             <Divider className={styles.hr} />
             <div className={styles.description}>
@@ -86,7 +95,7 @@ export const Product = ({ product, children, className, ...props }: ProductProps
          <Card color="blue" className={cn(styles.reviews, {
             [styles.opened]: isPeviewOpened,
             [styles.closed]: !isPeviewOpened
-         })}>
+         })} ref={reviewRef}>
             {product.reviews.map(r => (
                <div  key={r._id}>
                   <Review review={r} />
@@ -95,6 +104,6 @@ export const Product = ({ product, children, className, ...props }: ProductProps
             ))}
             <ReviewForm productId={product._id} />
          </Card>
-      </>
+      </div>
    )
 }
