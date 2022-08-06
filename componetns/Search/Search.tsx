@@ -20,7 +20,7 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
       });
    };
 
-   const handleKeyDown = (e: KeyboardEvent) => {
+   const handleKeyDown = (e: any) => {
       if (e.key === 'Enter') {
          goToSearch();
       }
