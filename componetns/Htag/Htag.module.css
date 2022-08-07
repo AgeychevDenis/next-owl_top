@@ -19,3 +19,10 @@
    line-height: 27px;
    margin: 0;
 }
+
+@media (max-width: 900px){
+   .h1 {
+      font-size: 22px;
+      line-height: 30px;
+   }
+}
