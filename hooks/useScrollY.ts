@@ -9,7 +9,7 @@ export const useScrollY = (): number => {
 
    const handleScroll = () => {
       const currentScrollY = isBrowser ? window.scrollY : 0;
-      setScrollY(currentScrollY)
+      setScrollY(currentScrollY);
    }
 
    useEffect(() => {
