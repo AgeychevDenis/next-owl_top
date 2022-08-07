@@ -16,6 +16,7 @@
    padding: 5px 10px;
    font-size: 14px;
    line-height: 14px;
+   margin-bottom: 5px;
 }
 
 .ghost {
@@ -31,7 +32,7 @@
 
 .grey {
    color: var(--white);
-   background-color: #B3C0D9;
+   background-color: #8a99b7;
 
    font-weight: bold;
 }

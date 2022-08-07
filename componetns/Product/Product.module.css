@@ -65,7 +65,6 @@
 .credit {
    font-size: 20px;
    line-height: 27px;
-   align-self: flex-end;
 }
 
 .month {
@@ -145,7 +144,7 @@
    padding: 30px;
 }
 
-.rateTitle a{
+.rateTitle a {
    color: var(--primary);
 }
 
@@ -287,14 +286,22 @@
       ;
    }
 
-   .actions button{
+   .actions button {
       display: block;
       width: 100%;
    }
 
-   .actions button:last-child{
+   .actions button:last-child {
       margin-left: 0;
       margin-top: 10px;
+   }
+
+
+   .priceTitle,
+   .creditTitle,
+   .rateTitle {
+      position: relative;
+      top: -60px;
    }
 }
 
