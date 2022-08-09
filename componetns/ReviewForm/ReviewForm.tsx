@@ -86,16 +86,28 @@ export const ReviewForm = forwardRef(({ productId, isOpened, className, ...props
 					<span className={styles.info}>* Перед публикацией отзыв пройдет предварительную модерацию и проверку</span>
 				</div>
 			</div>
-			{isSuccess && <div className={cn(styles.success, styles.panel)}>
+			{isSuccess && <div className={cn(styles.success, styles.panel)} role="alert">
 				<div className={styles.successTitle}>Ваш отзыв отправлен</div>
 				<div>
 					Спасибо, ваш отзыв будет опубликован после проверки.
 				</div>
-				<CloseIcon className={styles.close} onClick={() => setIsSuccess(false)}/>
+				<button
+					onClick={() => setIsSuccess(false)}
+					className={styles.close}
+					aria-lable="Закрыть оповещение"
+				>
+					<CloseIcon />
+				</button>
 			</div>}
-			{error && <div className={cn(styles.error, styles.panel)}>
-				Что-то пошло не так, попробуйте обновить страницу		
-				<CloseIcon className={styles.close} onClick={() => setError(undefined)}/>
+			{error && <div className={cn(styles.error, styles.panel)} role="alert">
+				Что-то пошло не так, попробуйте обновить страницу
+				<button
+					onClick={() => setError(undefined)}
+					className={styles.close}
+					aria-lable="Закрыть оповещение"
+				>
+					<CloseIcon />
+				</button>
 			</div>}
 		</form>
 	);

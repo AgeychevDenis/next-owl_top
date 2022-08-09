@@ -43,19 +43,19 @@ export const Product = motion(forwardRef(({ product, children, className, ...pro
                {product.title}
             </div>
             <div className={styles.price}>
-               <span><span className={styles.visualyHidden}>цена</span>{priceRu(product.price)}</span>
+               <span><span className="visualyHidden">цена</span>{priceRu(product.price)}</span>
                {product.oldPrice && <Tag className={styles.oldPrice} color="green">{priceRu(product.price - product.oldPrice)}</Tag>}
             </div>
             <div className={styles.credit}>
-               <span className={styles.visualyHidden}>кредит</span>{priceRu(product.credit)}/<span className={styles.month}>мес</span>
+               <span className="visualyHidden">кредит</span>{priceRu(product.credit)}/<span className={styles.month}>мес</span>
             </div>
             <div className={styles.rating}>
-               <span className={styles.visualyHidden}>{'рейтинг' + (product.reviewAvg ?? product.initialRating)}</span>
+               <span className="visualyHidden">{'рейтинг' + (product.reviewAvg ?? product.initialRating)}</span>
                <Rating rating={product.reviewAvg ?? product.initialRating} />
             </div>
             <div className={styles.tags}>
                {product.categories.map((c) => <Tag className={styles.category} key={c} color="ghost">
-                  <span className={styles.visualyHidden}>скидка</span>
+                  <span className="visualyHidden">скидка</span>
                   {c}</Tag>)}
             </div>
             <div className={styles.priceTitle} aria-hidden={true}>
