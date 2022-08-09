@@ -5,6 +5,13 @@
    padding: 30px;
 }
 
+.visualyHidden {
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	position: absolute;
+}
+
 .logo {
    grid-column: start / logoend;
    grid-row: 1 / span 2;
