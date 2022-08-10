@@ -13,7 +13,6 @@ import { ReviewForm } from "../ReviewForm/ReviewForm";
 import { motion } from 'framer-motion';
 
 
-// eslint-disable-next-line react/display-name
 export const Product = motion(forwardRef(({ product, children, className, ...props }: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
    const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
    const reviewRef = useRef<HTMLDivElement>(null)
