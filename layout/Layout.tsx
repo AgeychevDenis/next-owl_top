@@ -43,7 +43,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
          <Up />
       </div>
    );
-}
+};
 
 export const withLayout = <T extends Record<string, unknown> & IAppContext>(Component: React.FunctionComponent<T>) => {
    return function withLayoutComponent(props: T): JSX.Element {

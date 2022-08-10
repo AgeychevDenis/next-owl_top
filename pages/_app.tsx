@@ -3,7 +3,7 @@ import Head from 'next/head';
 import '../styles/globals.css';
 import Router from 'next/router'
 import ym from 'react-yandex-metrika';
-import { YMInitializer } from 'react-yandex-metrika'
+import { YMInitializer } from 'react-yandex-metrika';
 
 Router.events.on('routeChangeComplete', (url: string) => {
   if (typeof window !== 'undefined') {
@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps, router }: AppPropsType): JSX.Element {
       />
       <Component {...pageProps} />
     </>
-  )
+  );
 }
 
 export default MyApp;

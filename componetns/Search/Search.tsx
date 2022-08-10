@@ -11,7 +11,12 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
    const [search, setSearch] = useState<string>('');
    const router = useRouter();
 
+   const handleSubmit = (e) => {
+      e.preventDefault();
+   };
+
    const goToSearch = () => {
+
       router.push({
          pathname: '/search',
          query: {
@@ -21,13 +26,14 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
    };
 
    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Enter') {
+
+      if (e.key == 'Enter') {
          goToSearch();
       }
    };
 
    return (
-      <form className={cn(className, styles.search)} {...props} role="search">
+      <form onSubmit={handleSubmit} className={cn(className, styles.search)} {...props} role="search">
          <Input
             className={styles.input}
             placeholder="Поиск..."
@@ -44,5 +50,5 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
             <GlassIcon />
          </Button>
       </form>
-   )
-}
+   );
+};

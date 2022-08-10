@@ -61,6 +61,7 @@
 .credit {
    font-size: 20px;
    line-height: 27px;
+   align-self: flex-end;
 }
 
 .month {
@@ -68,7 +69,7 @@
 }
 
 .rating {
-   align-self: center;
+   align-self: flex-end;
 }
 
 .description {
@@ -145,6 +146,27 @@
    color: var(--primary);
 }
 
+.actionsLink {
+   display: inline-block;
+
+   box-sizing: border-box;
+   padding: 10px;
+
+   cursor: pointer;
+   transition: all 0.2s;
+   text-align: center;
+
+   border: none;
+   border-radius: 5px;
+
+   font-size: 14px;
+   color: var(--white);
+   background-color: var(--primary);
+}
+
+.actionsLink:hover {
+   background-color: var(--primary-hover);
+}
 
 @media (max-width: 1320px) {
    .product {
@@ -287,7 +309,8 @@
       ;
    }
 
-   .actions button {
+   .actions button,
+   .actions a {
       display: block;
       width: 100%;
    }
@@ -317,5 +340,10 @@
 
    .opened {
       padding: 10px;
+   }
+
+   .characteristics {
+      font-size: 14px;
+      line-height: 28px;
    }
 }

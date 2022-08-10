@@ -1,7 +1,7 @@
 import { HeaderProps } from "./Header.props";
 import styles from './Header.module.css';
 import cn from 'classnames';
-import Logo from './logo.svg'
+import Logo from './logo.svg';
 import { ButtonIcon } from "../../componetns/ButtonIcon/ButtonIcon";
 import { motion, useReducedMotion } from "framer-motion";
 import { Sidebar } from '../Sidebar/Sidebar'
@@ -35,7 +35,9 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
    return (
       <header className={cn(className, styles.header)} {...props}>
          <Link href="/">
-            <Logo />
+            <a>
+               <Logo />
+            </a>
          </Link>
          <ButtonIcon appearance="white" icon="menu" onClick={() => setIsOpened(true)} />
          <motion.div

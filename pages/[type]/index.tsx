@@ -12,7 +12,7 @@ function Type({ firstCategory }: TypeProps): JSX.Element {
       <>
          Type: { firstCategory }
       </>
-   )
+   );
 }
 
 export default withLayout(Type);
@@ -44,8 +44,8 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({ params }: GetS
          menu,
          firstCategory: firstCategoryItem.id
       }
-   }
-}
+   };
+};
 
 interface TypeProps extends Record<string, unknown> {
    menu: MenuItem[];

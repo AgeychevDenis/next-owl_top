@@ -11,11 +11,13 @@ import { ForwardedRef, forwardRef, useRef, useState } from "react";
 import { Review } from "../Review/Review";
 import { ReviewForm } from "../ReviewForm/ReviewForm";
 import { motion } from 'framer-motion';
+import Link from "next/link";
 
 
 export const Product = motion(forwardRef(({ product, children, className, ...props }: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
    const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
    const reviewRef = useRef<HTMLDivElement>(null);
+
 
    const variants = {
       visible: { opacity: 1, height: 'auto' },
@@ -90,7 +92,9 @@ export const Product = motion(forwardRef(({ product, children, className, ...pro
             </div>
             <Divider className={cn(styles.hr, styles.hr2)} />
             <div className={styles.actions}>
-               <Button appearance="primary">Узнать подробнее</Button>
+               <Link href={product.link}>
+                  <a className={styles.actionsLink}>Узнать подробнее</a>
+               </Link>
                <Button
                   appearance="ghost"
                   arrow={isReviewOpened ? "down" : "right"}

@@ -11,7 +11,6 @@ import { useReducedMotion } from "framer-motion";
 export const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentProps): JSX.Element => {
    const [{ products: sortProducts, sort }, dispathSort] = useReducer(sortReducer, { products, sort: SortEnum.Rating });
    const shouldReduceMotion = useReducedMotion();
-  
 
    const setSort = (sort: SortEnum) => {
       dispathSort({ type: sort });
@@ -31,7 +30,7 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
          <div role="list">
             {sortProducts.length ? 
             sortProducts.map(p => (<Product role="listitem" layout={shouldReduceMotion ? false : true} key={p._id} product={p} />))
-            : <p className={styles.notCourses}>К сожалению, по данному направлению в данный момент нет курсов</p>
+            : <p className={styles.notCourses}>К сожалению, по данному направлению сейчас нет курсов</p>
          }
          </div>
          <div className={styles.hhTitle}>
