@@ -284,6 +284,13 @@
    .characteristics {
       padding-right: 0px;
    }
+
+   .description,
+   .characteristics,
+   .advBlock  {
+      font-size: 14px;
+      line-height: 22px;
+   }
 }
 
 @media (max-width: 480px) {
@@ -340,10 +347,5 @@
 
    .opened {
       padding: 10px;
-   }
-
-   .characteristics {
-      font-size: 14px;
-      line-height: 28px;
    }
 }
