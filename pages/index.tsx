@@ -7,11 +7,7 @@ import { Main } from '../componetns';
 
 function Home(): JSX.Element {
 
-  return (
-    <>
-      <Main />
-    </>
-  )
+  return <Main />;
 }
 
 export default withLayout(Home);
@@ -26,8 +22,8 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
       menu,
       firstCategory
     }
-  }
-}
+  };
+};
 
 interface HomeProps extends Record<string, unknown> {
   menu: MenuItem[];

@@ -37,8 +37,19 @@
    margin: 0;
 }
 
+.notCourses {
+   margin: 200px auto;
+   text-align: center;
+   font-size: 28px;
+   font-weight: 600;
+}
+
 @media (max-width: 640px) {
    .title {
       grid-template-columns: auto 1fr;
+   }
+
+   .notCourses {
+      margin: 50px auto;
    }
 }

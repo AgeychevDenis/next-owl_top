@@ -11,14 +11,15 @@ import { useReducedMotion } from "framer-motion";
 export const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentProps): JSX.Element => {
    const [{ products: sortProducts, sort }, dispathSort] = useReducer(sortReducer, { products, sort: SortEnum.Rating });
    const shouldReduceMotion = useReducedMotion();
+  
 
    const setSort = (sort: SortEnum) => {
       dispathSort({ type: sort });
-   }
+   };
 
    useEffect(() => {
       dispathSort({ type: 'reset', initialState: products });
-   }, [products])
+   }, [products]);
 
    return (
       <div className={styles.wrapper}>
@@ -28,7 +29,10 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
             <Sort sort={sort} setSort={setSort} />
          </div>
          <div role="list">
-            {sortProducts && sortProducts.map(p => (<Product role="listitem" layout={shouldReduceMotion ? false : true} key={p._id} product={p} />))}
+            {sortProducts.length ? 
+            sortProducts.map(p => (<Product role="listitem" layout={shouldReduceMotion ? false : true} key={p._id} product={p} />))
+            : <p className={styles.notCourses}>К сожалению, по данному направлению в данный момент нет курсов</p>
+         }
          </div>
          <div className={styles.hhTitle}>
             <Htag tag='h2'>Вакансии - {page.category}</Htag>

@@ -258,6 +258,10 @@
    .credit {
       margin-bottom: 10px;
    }
+
+   .characteristics {
+      padding-right: 0px;
+   }
 }
 
 @media (max-width: 480px) {
@@ -298,7 +302,11 @@
    .creditTitle,
    .rateTitle {
       position: relative;
-      top: -60px;
+      top: -56px;
+   }
+
+   .tags {
+      margin-bottom: 40px;
    }
 }
 

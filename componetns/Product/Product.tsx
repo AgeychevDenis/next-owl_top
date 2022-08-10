@@ -15,7 +15,7 @@ import { motion } from 'framer-motion';
 
 export const Product = motion(forwardRef(({ product, children, className, ...props }: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
    const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
-   const reviewRef = useRef<HTMLDivElement>(null)
+   const reviewRef = useRef<HTMLDivElement>(null);
 
    const variants = {
       visible: { opacity: 1, height: 'auto' },

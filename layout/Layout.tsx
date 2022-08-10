@@ -18,8 +18,8 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
          key.preventDefault();
          bodyRef.current?.focus();
 		}
-      setIsSkipLinkDisplayed(false)
-   }
+      setIsSkipLinkDisplayed(false);
+   };
 
    return (
       <div className={styles.wrapper}>
@@ -54,5 +54,5 @@ export const withLayout = <T extends Record<string, unknown> & IAppContext>(Comp
             </Layout>
          </AppContextProvider>
       );
-   }
-}
+   };
+};

@@ -7,6 +7,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Sidebar } from '../Sidebar/Sidebar'
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
    const [isOpened, setIsOpened] = useState<boolean>(false);
@@ -14,8 +15,8 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
    const shouldReduceMotion = useReducedMotion();
 
    useEffect(() => {
-      setIsOpened(false)
-   }, [router])
+      setIsOpened(false);
+   }, [router]);
 
    const variants = {
       opened: {
@@ -29,11 +30,13 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
          opacity: shouldReduceMotion ? 1 : 0,
          x: '100%',
       }
-   }
+   };
 
    return (
       <header className={cn(className, styles.header)} {...props}>
-         <Logo />
+         <Link href="/">
+            <Logo />
+         </Link>
          <ButtonIcon appearance="white" icon="menu" onClick={() => setIsOpened(true)} />
          <motion.div
             className={styles.mobuleMenu}
@@ -45,5 +48,5 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
             <ButtonIcon className={styles.menuClose} appearance="white" icon="close" onClick={() => setIsOpened(false)} />
          </motion.div>
       </header>
-   )
-}
+   );
+};
