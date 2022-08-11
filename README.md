@@ -63,11 +63,16 @@ yarn start
 
 ### Технологии проекта ###
 
-![react](https://user-images.githubusercontent.com/83320431/164966875-74b548bf-6351-41f7-8421-2d398fe1a2cc.svg)
+
+![react](https://user-images.githubusercontent.com/83320431/164966879-8acaddbe-246d-4c6a-ae5c-02a875e05216.svg)
+[![NextJS](https://img.shields.io/badge/-Next-0070f3?style=flat-square&logo=next.js)](https://learn.javascript.ru/)
+[![JavaScript](https://img.shields.io/badge/-JavaScript-FFC618?style=flat-square&logo=javascript&logoColor=000)](https://learn.javascript.ru/)
+![npm](https://user-images.githubusercontent.com/83320431/164966875-74b548bf-6351-41f7-8421-2d398fe1a2cc.svg)
 ![git](https://user-images.githubusercontent.com/83320431/164966836-33554341-f834-4991-9e93-549f2c02e3d5.svg)
 ![html5](https://user-images.githubusercontent.com/83320431/164966871-d1edd1c2-ab99-469e-8ea3-816996397d5d.svg)
-![npm](https://user-images.githubusercontent.com/83320431/164966879-8acaddbe-246d-4c6a-ae5c-02a875e05216.svg)
 
 ### Разработал :man:
 
 [AgeychevDenis](https://github.com/AgeychevDenis)
+
+
